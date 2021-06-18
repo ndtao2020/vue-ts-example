@@ -9,7 +9,7 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'npm install && npm audit fix'
-                sh 'npm run serve'
+                sh 'npm run build'
             }
         }
     }
