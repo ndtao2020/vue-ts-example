@@ -1,5 +1,5 @@
 pipeline {
-  agent none
+  agent any
   environment { 
     BUILD_TARGET = 'true'
     NODE_ENV = 'production'
