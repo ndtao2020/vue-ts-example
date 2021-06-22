@@ -13,7 +13,11 @@ pipeline {
         }
       }
       steps {
-        sh 'npm install && npm audit fix && npm run build'
+        sh 'npm i -g @vue/cli'
+        sh 'npm i -g @vue/cli-service'
+        sh 'npm install'
+        sh 'npm audit fix'
+        sh 'npm run build'
       }
     }
     stage('Deploy') {
