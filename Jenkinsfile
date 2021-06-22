@@ -8,7 +8,12 @@ pipeline {
   stages {
     stage('build') {
       agent {
-        dockerfile: true
+        docker {
+            image 'node:14-alpine'
+        }
+      }
+      steps {
+        sh 'npm install && npm audit fix && npm run build'
       }
     }
     stage('Deploy') {
