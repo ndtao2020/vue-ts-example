@@ -2,8 +2,6 @@ pipeline {
   agent any
   environment { 
     BUILD_TARGET = 'true'
-    NODE_ENV = 'production'
-    PORT = '3000'
   }
   stages {
     stage('build') {
@@ -13,9 +11,8 @@ pipeline {
         }
       }
       steps {
-        // sh 'npm i -g @vue/cli-service'
-        sh 'npm install'
-        sh 'npm audit fix'
+        sh 'npm install && npm audit fix'
+        sh ''
         sh 'npm run build'
       }
     }
