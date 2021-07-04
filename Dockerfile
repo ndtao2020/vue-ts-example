@@ -10,4 +10,4 @@ RUN npm install && npm audit fix
 RUN npm run build
 
 # run
-CMD [ "node", "build" ]
+CMD ["node", "server"]
